@@ -15,4 +15,3 @@ App::uses('Model', 'Model');
 class ChangeLoggerAppModel extends Model {
 
 }
-
