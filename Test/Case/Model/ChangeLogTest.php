@@ -3,7 +3,7 @@ App::uses('ChangeLog', 'ChangeLogger.Model');
 
 class ChangeLogTestCase extends CakeTestCase {
 
-	public $fixtures = array('Plugin.ChangeLogger.ChangeLog');
+	public $fixtures = array('plugin.change_logger.change_log');
 
 /**
  * setUp method
