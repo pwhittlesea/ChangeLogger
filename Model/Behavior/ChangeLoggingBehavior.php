@@ -168,11 +168,13 @@ class ChangeLoggingBehavior extends ModelBehavior {
 		$this->__prepare($model, true);
 
 		$before = $model->findById($model->id);
-		$before = $before[$model->name];
+		if (isset($before[$model->name])) {
+			$before = $before[$model->name];
 
-		foreach ($model->data[$model->name] as $field => $value) {
-			if ($field != 'modified' && $before[$field] != $value) {
-				$this->__modelCache[$model->name][$model->id][$field] = $before[$field];
+			foreach ($model->data[$model->name] as $field => $value) {
+				if ($field != 'modified' && $before[$field] != $value) {
+					$this->__modelCache[$model->name][$model->id][$field] = $before[$field];
+				}
 			}
 		}
 		return true;

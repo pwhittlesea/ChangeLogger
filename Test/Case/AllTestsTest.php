@@ -5,14 +5,11 @@
 
 class AllTestsTest extends PHPUnit_Framework_TestSuite {
 
-    public static function suite() {
+	public static function suite() {
+		$path = App::pluginPath('ChangeLogger') . 'Test' . DS . 'Case' . DS;
 
-        $path = App::pluginPath('ChangeLogger') . 'Test' . DS . 'Case' . DS;
-
-        $suite = new CakeTestSuite('All tests');
-        $suite->addTestDirectoryRecursive($path . 'Model' . DS);
-        return $suite;
-
-    }
-
+		$suite = new CakeTestSuite('All tests');
+		$suite->addTestDirectoryRecursive($path . 'Model' . DS);
+		return $suite;
+	}
 }
